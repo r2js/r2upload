@@ -6,6 +6,7 @@ module.exports = (app) => {
     return log('service [Mongoose] not found!');
   }
 
+  const query = app.service('Query');
   const { Schema } = mongoose;
   const ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -23,6 +24,10 @@ module.exports = (app) => {
   }, {
     timestamps: true,
   });
+
+  if (query) {
+    schema.plugin(query.plugin);
+  }
 
   return mongoose.model('file', schema);
 };
