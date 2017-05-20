@@ -1,11 +1,9 @@
-const log = require('debug')('r2:upload:file');
-
 module.exports = (app) => {
-  const mongoose = app.service('Mongoose');
-  if (!mongoose) {
-    return log('service [Mongoose] not found!');
+  if (!app.hasServices('Mongoose')) {
+    return false;
   }
 
+  const mongoose = app.service('Mongoose');
   const query = app.service('Query');
   const { Schema } = mongoose;
   const ObjectId = mongoose.Schema.Types.ObjectId;
