@@ -32,7 +32,15 @@
   },
   "main": "index.js",
   "readmeFilename": "README.md",
-  "keywords": [],
+  "keywords": [
+    "r2js",
+    "r2upload",
+    "r2base",
+    "r2mongoose",
+    "file",
+    "upload",
+    "multer"
+  ],
   "scripts": {
     "test": "mocha"
   },
