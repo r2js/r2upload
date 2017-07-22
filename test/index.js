@@ -8,11 +8,11 @@ const r2upload = require('../index');
 const expect = chai.expect;
 process.chdir(__dirname);
 
-const app = r2base({ baseDir: __dirname, port: 9001 });
+const app = r2base({ port: 9001 });
 
 app
   .start()
-  .serve(r2mongoose, { database: 'r2test' })
+  .serve(r2mongoose, { database: 'r2upload' })
   .serve(r2upload, {
     dir: 'public/upload',
     base: 'public',
